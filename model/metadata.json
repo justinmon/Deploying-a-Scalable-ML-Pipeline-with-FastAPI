@@ -1,0 +1,1023 @@
+{
+  "schema_version": 1,
+  "dataset_sha256": "0d2b143d27cb24094ce1a01aa8cf642e49a9196519cd32795e71e8ee71ae72e8",
+  "raw_rows": 32561,
+  "duplicate_rows_removed": 24,
+  "unique_rows": 32537,
+  "training_rows": 26029,
+  "test_rows": 6508,
+  "training_positive_rows": 6271,
+  "test_positive_rows": 1568,
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "stratify": "salary"
+  },
+  "feature_columns": [
+    "age",
+    "workclass",
+    "fnlgt",
+    "education",
+    "education-num",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "capital-gain",
+    "capital-loss",
+    "hours-per-week",
+    "native-country"
+  ],
+  "categorical_features": [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country"
+  ],
+  "numeric_features": [
+    "age",
+    "fnlgt",
+    "education-num",
+    "capital-gain",
+    "capital-loss",
+    "hours-per-week"
+  ],
+  "encoded_features": 108,
+  "label_classes": [
+    "<=50K",
+    ">50K"
+  ],
+  "model_class": "RandomForestClassifier",
+  "model_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": 12,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 2,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 200,
+    "n_jobs": 2,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "metrics": {
+    "precision": 0.8058510638297872,
+    "recall": 0.579719387755102,
+    "f1": 0.6743323442136498
+  },
+  "confusion_matrix_labels": [
+    "<=50K",
+    ">50K"
+  ],
+  "confusion_matrix": [
+    [
+      4721,
+      219
+    ],
+    [
+      659,
+      909
+    ]
+  ],
+  "slice_count": 102,
+  "slices": [
+    {
+      "feature": "workclass",
+      "value": "?",
+      "count": 357,
+      "positive_count": 36,
+      "precision": 0.8,
+      "recall": 0.5555555555555556,
+      "f1": 0.6557377049180327
+    },
+    {
+      "feature": "workclass",
+      "value": "Federal-gov",
+      "count": 191,
+      "positive_count": 73,
+      "precision": 0.782608695652174,
+      "recall": 0.4931506849315068,
+      "f1": 0.6050420168067226
+    },
+    {
+      "feature": "workclass",
+      "value": "Local-gov",
+      "count": 410,
+      "positive_count": 122,
+      "precision": 0.7755102040816326,
+      "recall": 0.6229508196721312,
+      "f1": 0.6909090909090909
+    },
+    {
+      "feature": "workclass",
+      "value": "Never-worked",
+      "count": 2,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "workclass",
+      "value": "Private",
+      "count": 4574,
+      "positive_count": 998,
+      "precision": 0.8149253731343283,
+      "recall": 0.5470941883767535,
+      "f1": 0.6546762589928058
+    },
+    {
+      "feature": "workclass",
+      "value": "Self-emp-inc",
+      "count": 215,
+      "positive_count": 124,
+      "precision": 0.8181818181818182,
+      "recall": 0.7258064516129032,
+      "f1": 0.7692307692307693
+    },
+    {
+      "feature": "workclass",
+      "value": "Self-emp-not-inc",
+      "count": 499,
+      "positive_count": 147,
+      "precision": 0.8017241379310345,
+      "recall": 0.6326530612244898,
+      "f1": 0.7072243346007605
+    },
+    {
+      "feature": "workclass",
+      "value": "State-gov",
+      "count": 258,
+      "positive_count": 68,
+      "precision": 0.7619047619047619,
+      "recall": 0.7058823529411765,
+      "f1": 0.732824427480916
+    },
+    {
+      "feature": "workclass",
+      "value": "Without-pay",
+      "count": 2,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "education",
+      "value": "10th",
+      "count": 185,
+      "positive_count": 14,
+      "precision": 1.0,
+      "recall": 0.07142857142857142,
+      "f1": 0.13333333333333333
+    },
+    {
+      "feature": "education",
+      "value": "11th",
+      "count": 244,
+      "positive_count": 11,
+      "precision": 1.0,
+      "recall": 0.18181818181818182,
+      "f1": 0.3076923076923077
+    },
+    {
+      "feature": "education",
+      "value": "12th",
+      "count": 75,
+      "positive_count": 4,
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4
+    },
+    {
+      "feature": "education",
+      "value": "1st-4th",
+      "count": 37,
+      "positive_count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "feature": "education",
+      "value": "5th-6th",
+      "count": 64,
+      "positive_count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "feature": "education",
+      "value": "7th-8th",
+      "count": 127,
+      "positive_count": 6,
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857
+    },
+    {
+      "feature": "education",
+      "value": "9th",
+      "count": 118,
+      "positive_count": 7,
+      "precision": 1.0,
+      "recall": 0.14285714285714285,
+      "f1": 0.25
+    },
+    {
+      "feature": "education",
+      "value": "Assoc-acdm",
+      "count": 224,
+      "positive_count": 53,
+      "precision": 0.8387096774193549,
+      "recall": 0.49056603773584906,
+      "f1": 0.6190476190476191
+    },
+    {
+      "feature": "education",
+      "value": "Assoc-voc",
+      "count": 271,
+      "positive_count": 82,
+      "precision": 0.8611111111111112,
+      "recall": 0.3780487804878049,
+      "f1": 0.5254237288135594
+    },
+    {
+      "feature": "education",
+      "value": "Bachelors",
+      "count": 1075,
+      "positive_count": 441,
+      "precision": 0.7422480620155039,
+      "recall": 0.8684807256235828,
+      "f1": 0.800417972831766
+    },
+    {
+      "feature": "education",
+      "value": "Doctorate",
+      "count": 90,
+      "positive_count": 68,
+      "precision": 0.8333333333333334,
+      "recall": 0.8823529411764706,
+      "f1": 0.8571428571428571
+    },
+    {
+      "feature": "education",
+      "value": "HS-grad",
+      "count": 2091,
+      "positive_count": 333,
+      "precision": 0.9146341463414634,
+      "recall": 0.22522522522522523,
+      "f1": 0.3614457831325301
+    },
+    {
+      "feature": "education",
+      "value": "Masters",
+      "count": 326,
+      "positive_count": 179,
+      "precision": 0.8341968911917098,
+      "recall": 0.8994413407821229,
+      "f1": 0.8655913978494624
+    },
+    {
+      "feature": "education",
+      "value": "Preschool",
+      "count": 13,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "education",
+      "value": "Prof-school",
+      "count": 116,
+      "positive_count": 83,
+      "precision": 0.8210526315789474,
+      "recall": 0.9397590361445783,
+      "f1": 0.8764044943820225
+    },
+    {
+      "feature": "education",
+      "value": "Some-college",
+      "count": 1452,
+      "positive_count": 285,
+      "precision": 0.9157894736842105,
+      "recall": 0.30526315789473685,
+      "f1": 0.45789473684210524
+    },
+    {
+      "feature": "marital-status",
+      "value": "Divorced",
+      "count": 918,
+      "positive_count": 97,
+      "precision": 0.9230769230769231,
+      "recall": 0.24742268041237114,
+      "f1": 0.3902439024390244
+    },
+    {
+      "feature": "marital-status",
+      "value": "Married-AF-spouse",
+      "count": 6,
+      "positive_count": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "marital-status",
+      "value": "Married-civ-spouse",
+      "count": 3029,
+      "positive_count": 1353,
+      "precision": 0.7960526315789473,
+      "recall": 0.6260162601626016,
+      "f1": 0.7008688456764585
+    },
+    {
+      "feature": "marital-status",
+      "value": "Married-spouse-absent",
+      "count": 78,
+      "positive_count": 4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "marital-status",
+      "value": "Never-married",
+      "count": 2067,
+      "positive_count": 84,
+      "precision": 1.0,
+      "recall": 0.32142857142857145,
+      "f1": 0.4864864864864865
+    },
+    {
+      "feature": "marital-status",
+      "value": "Separated",
+      "count": 199,
+      "positive_count": 15,
+      "precision": 1.0,
+      "recall": 0.4,
+      "f1": 0.5714285714285714
+    },
+    {
+      "feature": "marital-status",
+      "value": "Widowed",
+      "count": 211,
+      "positive_count": 12,
+      "precision": 1.0,
+      "recall": 0.4166666666666667,
+      "f1": 0.5882352941176471
+    },
+    {
+      "feature": "occupation",
+      "value": "?",
+      "count": 359,
+      "positive_count": 36,
+      "precision": 0.8,
+      "recall": 0.5555555555555556,
+      "f1": 0.6557377049180327
+    },
+    {
+      "feature": "occupation",
+      "value": "Adm-clerical",
+      "count": 765,
+      "positive_count": 112,
+      "precision": 0.7169811320754716,
+      "recall": 0.3392857142857143,
+      "f1": 0.46060606060606063
+    },
+    {
+      "feature": "occupation",
+      "value": "Armed-Forces",
+      "count": 1,
+      "positive_count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "feature": "occupation",
+      "value": "Craft-repair",
+      "count": 814,
+      "positive_count": 179,
+      "precision": 0.782608695652174,
+      "recall": 0.3016759776536313,
+      "f1": 0.43548387096774194
+    },
+    {
+      "feature": "occupation",
+      "value": "Exec-managerial",
+      "count": 810,
+      "positive_count": 399,
+      "precision": 0.8425655976676385,
+      "recall": 0.7243107769423559,
+      "f1": 0.7789757412398922
+    },
+    {
+      "feature": "occupation",
+      "value": "Farming-fishing",
+      "count": 209,
+      "positive_count": 20,
+      "precision": 0.6666666666666666,
+      "recall": 0.4,
+      "f1": 0.5
+    },
+    {
+      "feature": "occupation",
+      "value": "Handlers-cleaners",
+      "count": 249,
+      "positive_count": 11,
+      "precision": 0.6,
+      "recall": 0.2727272727272727,
+      "f1": 0.375
+    },
+    {
+      "feature": "occupation",
+      "value": "Machine-op-inspct",
+      "count": 402,
+      "positive_count": 50,
+      "precision": 0.8823529411764706,
+      "recall": 0.3,
+      "f1": 0.44776119402985076
+    },
+    {
+      "feature": "occupation",
+      "value": "Other-service",
+      "count": 668,
+      "positive_count": 20,
+      "precision": 1.0,
+      "recall": 0.15,
+      "f1": 0.2608695652173913
+    },
+    {
+      "feature": "occupation",
+      "value": "Priv-house-serv",
+      "count": 30,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "occupation",
+      "value": "Prof-specialty",
+      "count": 826,
+      "positive_count": 364,
+      "precision": 0.7994791666666666,
+      "recall": 0.8434065934065934,
+      "f1": 0.820855614973262
+    },
+    {
+      "feature": "occupation",
+      "value": "Protective-serv",
+      "count": 118,
+      "positive_count": 40,
+      "precision": 0.8888888888888888,
+      "recall": 0.4,
+      "f1": 0.5517241379310345
+    },
+    {
+      "feature": "occupation",
+      "value": "Sales",
+      "count": 734,
+      "positive_count": 212,
+      "precision": 0.78,
+      "recall": 0.5518867924528302,
+      "f1": 0.6464088397790055
+    },
+    {
+      "feature": "occupation",
+      "value": "Tech-support",
+      "count": 189,
+      "positive_count": 63,
+      "precision": 0.8387096774193549,
+      "recall": 0.4126984126984127,
+      "f1": 0.5531914893617021
+    },
+    {
+      "feature": "occupation",
+      "value": "Transport-moving",
+      "count": 334,
+      "positive_count": 61,
+      "precision": 0.7058823529411765,
+      "recall": 0.19672131147540983,
+      "f1": 0.3076923076923077
+    },
+    {
+      "feature": "relationship",
+      "value": "Husband",
+      "count": 2658,
+      "positive_count": 1182,
+      "precision": 0.7908704883227177,
+      "recall": 0.6302876480541455,
+      "f1": 0.7015065913370998
+    },
+    {
+      "feature": "relationship",
+      "value": "Not-in-family",
+      "count": 1688,
+      "positive_count": 159,
+      "precision": 0.9574468085106383,
+      "recall": 0.2830188679245283,
+      "f1": 0.4368932038834951
+    },
+    {
+      "feature": "relationship",
+      "value": "Other-relative",
+      "count": 178,
+      "positive_count": 9,
+      "precision": 1.0,
+      "recall": 0.2222222222222222,
+      "f1": 0.36363636363636365
+    },
+    {
+      "feature": "relationship",
+      "value": "Own-child",
+      "count": 982,
+      "positive_count": 14,
+      "precision": 1.0,
+      "recall": 0.2857142857142857,
+      "f1": 0.4444444444444444
+    },
+    {
+      "feature": "relationship",
+      "value": "Unmarried",
+      "count": 681,
+      "positive_count": 39,
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "f1": 0.5
+    },
+    {
+      "feature": "relationship",
+      "value": "Wife",
+      "count": 321,
+      "positive_count": 165,
+      "precision": 0.8333333333333334,
+      "recall": 0.6060606060606061,
+      "f1": 0.7017543859649122
+    },
+    {
+      "feature": "race",
+      "value": "Amer-Indian-Eskimo",
+      "count": 66,
+      "positive_count": 9,
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "f1": 0.5
+    },
+    {
+      "feature": "race",
+      "value": "Asian-Pac-Islander",
+      "count": 208,
+      "positive_count": 55,
+      "precision": 0.72,
+      "recall": 0.6545454545454545,
+      "f1": 0.6857142857142857
+    },
+    {
+      "feature": "race",
+      "value": "Black",
+      "count": 644,
+      "positive_count": 87,
+      "precision": 0.8936170212765957,
+      "recall": 0.4827586206896552,
+      "f1": 0.6268656716417911
+    },
+    {
+      "feature": "race",
+      "value": "Other",
+      "count": 65,
+      "positive_count": 4,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8888888888888888
+    },
+    {
+      "feature": "race",
+      "value": "White",
+      "count": 5525,
+      "positive_count": 1413,
+      "precision": 0.8054740957966764,
+      "recall": 0.5831564048124558,
+      "f1": 0.6765188834154351
+    },
+    {
+      "feature": "sex",
+      "value": "Female",
+      "count": 2130,
+      "positive_count": 254,
+      "precision": 0.8639455782312925,
+      "recall": 0.5,
+      "f1": 0.6334164588528678
+    },
+    {
+      "feature": "sex",
+      "value": "Male",
+      "count": 4378,
+      "positive_count": 1314,
+      "precision": 0.7971457696228338,
+      "recall": 0.5951293759512938,
+      "f1": 0.6814814814814815
+    },
+    {
+      "feature": "native-country",
+      "value": "?",
+      "count": 127,
+      "positive_count": 30,
+      "precision": 0.8571428571428571,
+      "recall": 0.8,
+      "f1": 0.8275862068965517
+    },
+    {
+      "feature": "native-country",
+      "value": "Cambodia",
+      "count": 4,
+      "positive_count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Canada",
+      "count": 26,
+      "positive_count": 4,
+      "precision": 0.3333333333333333,
+      "recall": 0.25,
+      "f1": 0.2857142857142857
+    },
+    {
+      "feature": "native-country",
+      "value": "China",
+      "count": 15,
+      "positive_count": 4,
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1": 0.6666666666666666
+    },
+    {
+      "feature": "native-country",
+      "value": "Columbia",
+      "count": 14,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Cuba",
+      "count": 13,
+      "positive_count": 4,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+    },
+    {
+      "feature": "native-country",
+      "value": "Dominican-Republic",
+      "count": 19,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Ecuador",
+      "count": 6,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "El-Salvador",
+      "count": 25,
+      "positive_count": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "feature": "native-country",
+      "value": "England",
+      "count": 15,
+      "positive_count": 6,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+    },
+    {
+      "feature": "native-country",
+      "value": "France",
+      "count": 4,
+      "positive_count": 2,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8
+    },
+    {
+      "feature": "native-country",
+      "value": "Germany",
+      "count": 25,
+      "positive_count": 7,
+      "precision": 0.8,
+      "recall": 0.5714285714285714,
+      "f1": 0.6666666666666666
+    },
+    {
+      "feature": "native-country",
+      "value": "Greece",
+      "count": 2,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Guatemala",
+      "count": 12,
+      "positive_count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Haiti",
+      "count": 11,
+      "positive_count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Holand-Netherlands",
+      "count": 0,
+      "positive_count": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    {
+      "feature": "native-country",
+      "value": "Honduras",
+      "count": 1,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Hong",
+      "count": 3,
+      "positive_count": 1,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666
+    },
+    {
+      "feature": "native-country",
+      "value": "Hungary",
+      "count": 4,
+      "positive_count": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "India",
+      "count": 22,
+      "positive_count": 8,
+      "precision": 0.5714285714285714,
+      "recall": 1.0,
+      "f1": 0.7272727272727273
+    },
+    {
+      "feature": "native-country",
+      "value": "Iran",
+      "count": 8,
+      "positive_count": 3,
+      "precision": 0.5,
+      "recall": 0.3333333333333333,
+      "f1": 0.4
+    },
+    {
+      "feature": "native-country",
+      "value": "Ireland",
+      "count": 2,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Italy",
+      "count": 16,
+      "positive_count": 9,
+      "precision": 0.8571428571428571,
+      "recall": 0.6666666666666666,
+      "f1": 0.75
+    },
+    {
+      "feature": "native-country",
+      "value": "Jamaica",
+      "count": 20,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Japan",
+      "count": 16,
+      "positive_count": 7,
+      "precision": 0.8,
+      "recall": 0.5714285714285714,
+      "f1": 0.6666666666666666
+    },
+    {
+      "feature": "native-country",
+      "value": "Laos",
+      "count": 4,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Mexico",
+      "count": 130,
+      "positive_count": 2,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+    },
+    {
+      "feature": "native-country",
+      "value": "Nicaragua",
+      "count": 9,
+      "positive_count": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Outlying-US(Guam-USVI-etc)",
+      "count": 3,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Peru",
+      "count": 4,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Philippines",
+      "count": 43,
+      "positive_count": 13,
+      "precision": 0.9,
+      "recall": 0.6923076923076923,
+      "f1": 0.782608695652174
+    },
+    {
+      "feature": "native-country",
+      "value": "Poland",
+      "count": 10,
+      "positive_count": 2,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8
+    },
+    {
+      "feature": "native-country",
+      "value": "Portugal",
+      "count": 6,
+      "positive_count": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Puerto-Rico",
+      "count": 23,
+      "positive_count": 4,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571
+    },
+    {
+      "feature": "native-country",
+      "value": "Scotland",
+      "count": 2,
+      "positive_count": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "feature": "native-country",
+      "value": "South",
+      "count": 23,
+      "positive_count": 7,
+      "precision": 0.6,
+      "recall": 0.42857142857142855,
+      "f1": 0.5
+    },
+    {
+      "feature": "native-country",
+      "value": "Taiwan",
+      "count": 8,
+      "positive_count": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Thailand",
+      "count": 3,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Trinadad&Tobago",
+      "count": 5,
+      "positive_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "United-States",
+      "count": 5817,
+      "positive_count": 1441,
+      "precision": 0.8100393700787402,
+      "recall": 0.5711311589174185,
+      "f1": 0.6699226699226699
+    },
+    {
+      "feature": "native-country",
+      "value": "Vietnam",
+      "count": 4,
+      "positive_count": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "feature": "native-country",
+      "value": "Yugoslavia",
+      "count": 4,
+      "positive_count": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  ],
+  "versions": {
+    "python": "3.10.11",
+    "numpy": "2.2.6",
+    "pandas": "2.2.2",
+    "scikit-learn": "1.5.1"
+  }
+}
