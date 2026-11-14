@@ -1,0 +1,208 @@
+Held-out test metrics; positive label: >50K.
+Undefined ratios use zero; empty slices use N/A.
+Small slices are uncertain and do not establish fairness.
+
+workclass: ?, Count: 357, Positive count: 36
+Precision: 0.8000 | Recall: 0.5556 | F1: 0.6557
+workclass: Federal-gov, Count: 191, Positive count: 73
+Precision: 0.7826 | Recall: 0.4932 | F1: 0.6050
+workclass: Local-gov, Count: 410, Positive count: 122
+Precision: 0.7755 | Recall: 0.6230 | F1: 0.6909
+workclass: Never-worked, Count: 2, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+workclass: Private, Count: 4,574, Positive count: 998
+Precision: 0.8149 | Recall: 0.5471 | F1: 0.6547
+workclass: Self-emp-inc, Count: 215, Positive count: 124
+Precision: 0.8182 | Recall: 0.7258 | F1: 0.7692
+workclass: Self-emp-not-inc, Count: 499, Positive count: 147
+Precision: 0.8017 | Recall: 0.6327 | F1: 0.7072
+workclass: State-gov, Count: 258, Positive count: 68
+Precision: 0.7619 | Recall: 0.7059 | F1: 0.7328
+workclass: Without-pay, Count: 2, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+education: 10th, Count: 185, Positive count: 14
+Precision: 1.0000 | Recall: 0.0714 | F1: 0.1333
+education: 11th, Count: 244, Positive count: 11
+Precision: 1.0000 | Recall: 0.1818 | F1: 0.3077
+education: 12th, Count: 75, Positive count: 4
+Precision: 1.0000 | Recall: 0.2500 | F1: 0.4000
+education: 1st-4th, Count: 37, Positive count: 1
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+education: 5th-6th, Count: 64, Positive count: 1
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+education: 7th-8th, Count: 127, Positive count: 6
+Precision: 1.0000 | Recall: 0.1667 | F1: 0.2857
+education: 9th, Count: 118, Positive count: 7
+Precision: 1.0000 | Recall: 0.1429 | F1: 0.2500
+education: Assoc-acdm, Count: 224, Positive count: 53
+Precision: 0.8387 | Recall: 0.4906 | F1: 0.6190
+education: Assoc-voc, Count: 271, Positive count: 82
+Precision: 0.8611 | Recall: 0.3780 | F1: 0.5254
+education: Bachelors, Count: 1,075, Positive count: 441
+Precision: 0.7422 | Recall: 0.8685 | F1: 0.8004
+education: Doctorate, Count: 90, Positive count: 68
+Precision: 0.8333 | Recall: 0.8824 | F1: 0.8571
+education: HS-grad, Count: 2,091, Positive count: 333
+Precision: 0.9146 | Recall: 0.2252 | F1: 0.3614
+education: Masters, Count: 326, Positive count: 179
+Precision: 0.8342 | Recall: 0.8994 | F1: 0.8656
+education: Preschool, Count: 13, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+education: Prof-school, Count: 116, Positive count: 83
+Precision: 0.8211 | Recall: 0.9398 | F1: 0.8764
+education: Some-college, Count: 1,452, Positive count: 285
+Precision: 0.9158 | Recall: 0.3053 | F1: 0.4579
+marital-status: Divorced, Count: 918, Positive count: 97
+Precision: 0.9231 | Recall: 0.2474 | F1: 0.3902
+marital-status: Married-AF-spouse, Count: 6, Positive count: 3
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+marital-status: Married-civ-spouse, Count: 3,029, Positive count: 1,353
+Precision: 0.7961 | Recall: 0.6260 | F1: 0.7009
+marital-status: Married-spouse-absent, Count: 78, Positive count: 4
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+marital-status: Never-married, Count: 2,067, Positive count: 84
+Precision: 1.0000 | Recall: 0.3214 | F1: 0.4865
+marital-status: Separated, Count: 199, Positive count: 15
+Precision: 1.0000 | Recall: 0.4000 | F1: 0.5714
+marital-status: Widowed, Count: 211, Positive count: 12
+Precision: 1.0000 | Recall: 0.4167 | F1: 0.5882
+occupation: ?, Count: 359, Positive count: 36
+Precision: 0.8000 | Recall: 0.5556 | F1: 0.6557
+occupation: Adm-clerical, Count: 765, Positive count: 112
+Precision: 0.7170 | Recall: 0.3393 | F1: 0.4606
+occupation: Armed-Forces, Count: 1, Positive count: 1
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+occupation: Craft-repair, Count: 814, Positive count: 179
+Precision: 0.7826 | Recall: 0.3017 | F1: 0.4355
+occupation: Exec-managerial, Count: 810, Positive count: 399
+Precision: 0.8426 | Recall: 0.7243 | F1: 0.7790
+occupation: Farming-fishing, Count: 209, Positive count: 20
+Precision: 0.6667 | Recall: 0.4000 | F1: 0.5000
+occupation: Handlers-cleaners, Count: 249, Positive count: 11
+Precision: 0.6000 | Recall: 0.2727 | F1: 0.3750
+occupation: Machine-op-inspct, Count: 402, Positive count: 50
+Precision: 0.8824 | Recall: 0.3000 | F1: 0.4478
+occupation: Other-service, Count: 668, Positive count: 20
+Precision: 1.0000 | Recall: 0.1500 | F1: 0.2609
+occupation: Priv-house-serv, Count: 30, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+occupation: Prof-specialty, Count: 826, Positive count: 364
+Precision: 0.7995 | Recall: 0.8434 | F1: 0.8209
+occupation: Protective-serv, Count: 118, Positive count: 40
+Precision: 0.8889 | Recall: 0.4000 | F1: 0.5517
+occupation: Sales, Count: 734, Positive count: 212
+Precision: 0.7800 | Recall: 0.5519 | F1: 0.6464
+occupation: Tech-support, Count: 189, Positive count: 63
+Precision: 0.8387 | Recall: 0.4127 | F1: 0.5532
+occupation: Transport-moving, Count: 334, Positive count: 61
+Precision: 0.7059 | Recall: 0.1967 | F1: 0.3077
+relationship: Husband, Count: 2,658, Positive count: 1,182
+Precision: 0.7909 | Recall: 0.6303 | F1: 0.7015
+relationship: Not-in-family, Count: 1,688, Positive count: 159
+Precision: 0.9574 | Recall: 0.2830 | F1: 0.4369
+relationship: Other-relative, Count: 178, Positive count: 9
+Precision: 1.0000 | Recall: 0.2222 | F1: 0.3636
+relationship: Own-child, Count: 982, Positive count: 14
+Precision: 1.0000 | Recall: 0.2857 | F1: 0.4444
+relationship: Unmarried, Count: 681, Positive count: 39
+Precision: 1.0000 | Recall: 0.3333 | F1: 0.5000
+relationship: Wife, Count: 321, Positive count: 165
+Precision: 0.8333 | Recall: 0.6061 | F1: 0.7018
+race: Amer-Indian-Eskimo, Count: 66, Positive count: 9
+Precision: 1.0000 | Recall: 0.3333 | F1: 0.5000
+race: Asian-Pac-Islander, Count: 208, Positive count: 55
+Precision: 0.7200 | Recall: 0.6545 | F1: 0.6857
+race: Black, Count: 644, Positive count: 87
+Precision: 0.8936 | Recall: 0.4828 | F1: 0.6269
+race: Other, Count: 65, Positive count: 4
+Precision: 0.8000 | Recall: 1.0000 | F1: 0.8889
+race: White, Count: 5,525, Positive count: 1,413
+Precision: 0.8055 | Recall: 0.5832 | F1: 0.6765
+sex: Female, Count: 2,130, Positive count: 254
+Precision: 0.8639 | Recall: 0.5000 | F1: 0.6334
+sex: Male, Count: 4,378, Positive count: 1,314
+Precision: 0.7971 | Recall: 0.5951 | F1: 0.6815
+native-country: ?, Count: 127, Positive count: 30
+Precision: 0.8571 | Recall: 0.8000 | F1: 0.8276
+native-country: Cambodia, Count: 4, Positive count: 1
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+native-country: Canada, Count: 26, Positive count: 4
+Precision: 0.3333 | Recall: 0.2500 | F1: 0.2857
+native-country: China, Count: 15, Positive count: 4
+Precision: 0.6000 | Recall: 0.7500 | F1: 0.6667
+native-country: Columbia, Count: 14, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Cuba, Count: 13, Positive count: 4
+Precision: 1.0000 | Recall: 0.5000 | F1: 0.6667
+native-country: Dominican-Republic, Count: 19, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Ecuador, Count: 6, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: El-Salvador, Count: 25, Positive count: 2
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+native-country: England, Count: 15, Positive count: 6
+Precision: 1.0000 | Recall: 0.5000 | F1: 0.6667
+native-country: France, Count: 4, Positive count: 2
+Precision: 0.6667 | Recall: 1.0000 | F1: 0.8000
+native-country: Germany, Count: 25, Positive count: 7
+Precision: 0.8000 | Recall: 0.5714 | F1: 0.6667
+native-country: Greece, Count: 2, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Guatemala, Count: 12, Positive count: 1
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+native-country: Haiti, Count: 11, Positive count: 1
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+native-country: Holand-Netherlands, Count: 0, Positive count: 0
+Precision: N/A | Recall: N/A | F1: N/A (no test rows)
+native-country: Honduras, Count: 1, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Hong, Count: 3, Positive count: 1
+Precision: 0.5000 | Recall: 1.0000 | F1: 0.6667
+native-country: Hungary, Count: 4, Positive count: 1
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: India, Count: 22, Positive count: 8
+Precision: 0.5714 | Recall: 1.0000 | F1: 0.7273
+native-country: Iran, Count: 8, Positive count: 3
+Precision: 0.5000 | Recall: 0.3333 | F1: 0.4000
+native-country: Ireland, Count: 2, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Italy, Count: 16, Positive count: 9
+Precision: 0.8571 | Recall: 0.6667 | F1: 0.7500
+native-country: Jamaica, Count: 20, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Japan, Count: 16, Positive count: 7
+Precision: 0.8000 | Recall: 0.5714 | F1: 0.6667
+native-country: Laos, Count: 4, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Mexico, Count: 130, Positive count: 2
+Precision: 1.0000 | Recall: 0.5000 | F1: 0.6667
+native-country: Nicaragua, Count: 9, Positive count: 1
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Outlying-US(Guam-USVI-etc), Count: 3, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Peru, Count: 4, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Philippines, Count: 43, Positive count: 13
+Precision: 0.9000 | Recall: 0.6923 | F1: 0.7826
+native-country: Poland, Count: 10, Positive count: 2
+Precision: 0.6667 | Recall: 1.0000 | F1: 0.8000
+native-country: Portugal, Count: 6, Positive count: 1
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Puerto-Rico, Count: 23, Positive count: 4
+Precision: 1.0000 | Recall: 0.7500 | F1: 0.8571
+native-country: Scotland, Count: 2, Positive count: 1
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+native-country: South, Count: 23, Positive count: 7
+Precision: 0.6000 | Recall: 0.4286 | F1: 0.5000
+native-country: Taiwan, Count: 8, Positive count: 3
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+native-country: Thailand, Count: 3, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Trinadad&Tobago, Count: 5, Positive count: 0
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: United-States, Count: 5,817, Positive count: 1,441
+Precision: 0.8100 | Recall: 0.5711 | F1: 0.6699
+native-country: Vietnam, Count: 4, Positive count: 1
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+native-country: Yugoslavia, Count: 4, Positive count: 1
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000

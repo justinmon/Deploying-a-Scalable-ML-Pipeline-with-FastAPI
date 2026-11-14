@@ -1,6 +1,14 @@
-import os
+"""Train, persist, and evaluate the Census income classifier."""
 
+import hashlib
+import json
+import platform
+from pathlib import Path
+
+import numpy as np
 import pandas as pd
+import sklearn
+from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 
 from ml.data import process_data
@@ -12,18 +20,9 @@ from ml.model import (
     save_model,
     train_model,
 )
-# TODO: load the cencus.csv data
-project_path = "Your path here"
-data_path = os.path.join(project_path, "data", "census.csv")
-print(data_path)
-data = None # your code here
 
-# TODO: split the provided data to have a train dataset and a test dataset
-# Optional enhancement, use K-fold cross validation instead of a train-test split.
-train, test = None, None# Your code here
-
-# DO NOT MODIFY
-cat_features = [
+PROJECT_PATH = Path(__file__).resolve().parent
+CAT_FEATURES = [
     "workclass",
     "education",
     "marital-status",
@@ -34,54 +33,129 @@ cat_features = [
     "native-country",
 ]
 
-# TODO: use the process_data function provided to process the data.
-X_train, y_train, encoder, lb = process_data(
-    # your code here
-    # use the train dataset 
-    # use training=True
-    # do not need to pass encoder and lb as input
+
+def main():
+    """Run the full pipeline using an untouched stratified test partition."""
+    data_path = PROJECT_PATH / "data" / "census.csv"
+    data = pd.read_csv(data_path, skipinitialspace=True)
+    data.columns = data.columns.str.strip()
+    for column in data.select_dtypes(include="object"):
+        data[column] = data[column].str.strip()
+    raw_rows = len(data)
+    data = data.drop_duplicates().reset_index(drop=True)
+    train, test = train_test_split(
+        data, test_size=0.2, random_state=42, stratify=data["salary"]
     )
+    print(f"Loaded {raw_rows:,} rows; removed {raw_rows - len(data)} duplicates.")
+    print(f"Training rows: {len(train):,} | Test rows: {len(test):,}")
 
-X_test, y_test, _, _ = process_data(
-    test,
-    categorical_features=cat_features,
-    label="salary",
-    training=False,
-    encoder=encoder,
-    lb=lb,
-)
+    X_train, y_train, encoder, lb = process_data(
+        train, categorical_features=CAT_FEATURES, label="salary", training=True
+    )
+    X_test, y_test, _, _ = process_data(
+        test,
+        categorical_features=CAT_FEATURES,
+        label="salary",
+        training=False,
+        encoder=encoder,
+        lb=lb,
+    )
+    if list(lb.classes_) != ["<=50K", ">50K"]:
+        raise ValueError("Unexpected target class ordering.")
 
-# TODO: use the train_model function to train the model on the training dataset
-model = None # your code here
+    model = train_model(X_train, y_train)
+    model_directory = PROJECT_PATH / "model"
+    for name, artifact in [("model", model), ("encoder", encoder), ("lb", lb)]:
+        path = model_directory / f"{name}.pkl"
+        save_model(artifact, path)
+        print(f"Saved model/{path.name}")
 
-# save the model and the encoder
-model_path = os.path.join(project_path, "model", "model.pkl")
-save_model(model, model_path)
-encoder_path = os.path.join(project_path, "model", "encoder.pkl")
-save_model(encoder, encoder_path)
+    original_predictions = inference(model, X_test)
+    model = load_model(model_directory / "model.pkl")
+    encoder = load_model(model_directory / "encoder.pkl")
+    lb = load_model(model_directory / "lb.pkl")
+    X_test, y_test, _, _ = process_data(
+        test,
+        categorical_features=CAT_FEATURES,
+        label="salary",
+        training=False,
+        encoder=encoder,
+        lb=lb,
+    )
+    np.testing.assert_array_equal(original_predictions, inference(model, X_test))
+    predictions = inference(model, X_test)
+    precision, recall, f1 = compute_model_metrics(y_test, predictions)
+    print(f"Precision: {precision:.4f} | Recall: {recall:.4f} | F1: {f1:.4f}")
+    print("Saved artifacts reloaded: identical held-out predictions.")
 
-# load the model
-model = load_model(
-    model_path
-) 
+    slice_records = []
+    with (PROJECT_PATH / "slice_output.txt").open("w", encoding="utf-8") as file:
+        file.write("Held-out test metrics; positive label: >50K.\n")
+        file.write("Undefined ratios use zero; empty slices use N/A.\n")
+        file.write("Small slices are uncertain and do not establish fairness.\n\n")
+        for column in CAT_FEATURES:
+            # Include every value in the input data, even if absent from test.
+            for value in sorted(data[column].unique()):
+                subset = test.loc[test[column] == value]
+                count = len(subset)
+                positive_count = int((subset["salary"] == ">50K").sum())
+                file.write(
+                    f"{column}: {value}, Count: {count:,}, "
+                    f"Positive count: {positive_count:,}\n"
+                )
+                record = {
+                    "feature": column, "value": value, "count": count,
+                    "positive_count": positive_count,
+                }
+                if count:
+                    p, r, fb = performance_on_categorical_slice(
+                        test, column, value, CAT_FEATURES, "salary", encoder, lb, model
+                    )
+                    file.write(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}\n")
+                    record.update(precision=p, recall=r, f1=fb)
+                else:
+                    file.write(
+                        "Precision: N/A | Recall: N/A | F1: N/A (no test rows)\n"
+                    )
+                    record.update(precision=None, recall=None, f1=None)
+                slice_records.append(record)
 
-# TODO: use the inference function to run the model inferences on the test dataset.
-preds = None # your code here
+    metadata = {
+        "schema_version": 1,
+        "dataset_sha256": hashlib.sha256(data_path.read_bytes()).hexdigest(),
+        "raw_rows": raw_rows,
+        "duplicate_rows_removed": raw_rows - len(data),
+        "unique_rows": len(data),
+        "training_rows": len(train),
+        "test_rows": len(test),
+        "training_positive_rows": int((train["salary"] == ">50K").sum()),
+        "test_positive_rows": int((test["salary"] == ">50K").sum()),
+        "split": {"test_size": 0.2, "random_state": 42, "stratify": "salary"},
+        "feature_columns": data.drop(columns="salary").columns.tolist(),
+        "categorical_features": CAT_FEATURES,
+        "numeric_features": [
+            col for col in data.columns if col not in CAT_FEATURES + ["salary"]
+        ],
+        "encoded_features": int(X_train.shape[1]),
+        "label_classes": lb.classes_.tolist(),
+        "model_class": type(model).__name__,
+        "model_parameters": model.get_params(),
+        "metrics": {"precision": precision, "recall": recall, "f1": f1},
+        "confusion_matrix_labels": ["<=50K", ">50K"],
+        "confusion_matrix": confusion_matrix(y_test, predictions).tolist(),
+        "slice_count": len(slice_records),
+        "slices": slice_records,
+        "versions": {
+            "python": platform.python_version(), "numpy": np.__version__,
+            "pandas": pd.__version__, "scikit-learn": sklearn.__version__,
+        },
+    }
+    (model_directory / "metadata.json").write_text(
+        json.dumps(metadata, indent=2) + "\n", encoding="utf-8"
+    )
+    print(f"Wrote {len(slice_records)} categorical slices to slice_output.txt")
+    print("Wrote model/metadata.json")
 
-# Calculate and print the metrics
-p, r, fb = compute_model_metrics(y_test, preds)
-print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}")
 
-# TODO: compute the performance on model slices using the performance_on_categorical_slice function
-# iterate through the categorical features
-for col in cat_features:
-    # iterate through the unique values in one categorical feature
-    for slicevalue in sorted(test[col].unique()):
-        count = test[test[col] == slicevalue].shape[0]
-        p, r, fb = performance_on_categorical_slice(
-            # your code here
-            # use test, col and slicevalue as part of the input
-        )
-        with open("slice_output.txt", "a") as f:
-            print(f"{col}: {slicevalue}, Count: {count:,}", file=f)
-            print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f)
+if __name__ == "__main__":
+    main()
