@@ -70,8 +70,10 @@ fairness. The data contain sensitive attributes and historical income
 patterns; this coursework model should not be used to determine real
 people's access to employment, credit, or services.
 
-These are preprocessing decisions, not completed model results. Training,
-Python execution checks, model tests, and API implementation are still pending.
+This review records the preprocessing decisions made before training.
+The completed pipeline, measured performance, and limitations are documented
+in `model_card.md`, with detailed results in `model/metadata.json` and
+`slice_output.txt`. Run instructions are in `README.md`.
 
 The course links to the [UCI Census Income dataset reference](https://archive.ics.uci.edu/ml/datasets/census+income).
 The counts above were measured directly from the supplied project file on
